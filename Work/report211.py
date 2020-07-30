@@ -43,7 +43,7 @@ def make_report(a,b):
     for stock in a:
         cur_price = b[stock['name']]
         difference = cur_price - stock['price']
-        report_sum = (stock['name'],stock['shares'],cur_price, difference)
+        report_sum = (stock['name'],stock['shares'],"${:,.2f}".format(cur_price), difference)
         lines.append(report_sum)
     return lines
 
@@ -65,9 +65,10 @@ headers = ('Name', 'Shares', 'Price', 'Change')
 print('%10s %10s %10s %10s' %headers)
 print(('-' * 10 + ' ') * len(headers))
 for line in report:
-    print('%10s %10d %10.2f %10.2f' % line)
+    print('%10s %10d %10s %10.2f' % line)
 
 
+#Exercise 2.12
 
 
 
